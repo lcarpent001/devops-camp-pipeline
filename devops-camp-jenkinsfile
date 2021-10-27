@@ -1,5 +1,4 @@
 pipeline {
-pipeline {
  agent {
  label 'jenkins-agent'
  }
@@ -7,7 +6,7 @@ pipeline {
  stage('Application repository') {
  steps {
  echo "Cloning application repository"
- sh 'git clone <your application repository url.git>'
+ sh 'git clone https://github.com/lcarpent001/devops-camp-pipeline.git'
  }
  }
  stage('Application docker build') {
@@ -31,5 +30,6 @@ pipeline {
  echo "Clean workspace"
 sh 'docker system prune -f'
 sh 'rm -rf .git ./*'
+ }
  }
  }
