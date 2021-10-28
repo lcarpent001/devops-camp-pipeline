@@ -48,6 +48,16 @@ pipeline {
 	        }
 	    }
         }
+            post {
+                always {
+
+                        } catch (err) {
+                            echo err.getMessage()
+                        }
+                    }
+                }
+            }
+	}
         stage('Test'){
             steps {
                 echo "Testing stage"
@@ -61,7 +71,6 @@ pipeline {
 		
 		}
         }
-    } 
     post {
         cleanup {
             echo "Clean workspace"
